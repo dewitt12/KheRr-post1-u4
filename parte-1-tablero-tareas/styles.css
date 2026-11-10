@@ -1,0 +1,106 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0 1rem 3rem;
+  background: #f4f6fa;
+  color: #1f2937;
+}
+
+header { text-align: center; padding: 1.5rem 0 0.5rem; }
+h1 { margin: 0; font-size: 1.8rem; color: #1e3a8a; }
+
+#controles, #filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 900px;
+  margin: 1rem auto;
+  align-items: center;
+}
+
+#controles input { flex: 1 1 200px; }
+
+input, select, button {
+  font: inherit;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+}
+
+button { cursor: pointer; }
+button:hover { background: #eef2ff; }
+
+#btn-agregar {
+  background: #1e3a8a;
+  color: #fff;
+  border-color: #1e3a8a;
+}
+#btn-agregar:hover { background: #1e40af; }
+
+.filtro-grupo { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.btn-filtro-estado.activo {
+  background: #1e3a8a;
+  color: #fff;
+  border-color: #1e3a8a;
+}
+
+#stats {
+  max-width: 900px;
+  margin: 0.5rem auto 1rem;
+  padding: 0.6rem 1rem;
+  background: #e0e7ff;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tarea {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 6px solid #94a3b8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.tarea h3 { margin: 0.6rem 0 0.3rem; }
+.tarea p { margin: 0 0 0.8rem; color: #475569; overflow-wrap: anywhere; }
+
+/* Color del borde según el estado */
+.estado-pendiente   { border-left-color: #f59e0b; }
+.estado-en-progreso { border-left-color: #2563eb; }
+.estado-completada  { border-left-color: #16a34a; }
+
+.badge-prioridad, .badge-estado {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-right: 0.3rem;
+  font-weight: 600;
+}
+.badge-estado { background: #e2e8f0; color: #334155; }
+
+.prioridad-alta  .badge-prioridad { background: #fee2e2; color: #b91c1c; }
+.prioridad-media .badge-prioridad { background: #fef3c7; color: #b45309; }
+.prioridad-baja  .badge-prioridad { background: #dcfce7; color: #15803d; }
+
+.acciones-tarea { display: flex; gap: 0.4rem; }
+.btn-eliminar { color: #b91c1c; }
+
+.oculta { display: none; }
+
+.tablero-vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #64748b;
+}
